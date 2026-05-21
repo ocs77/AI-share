@@ -1,0 +1,29 @@
+name: Update index.html
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate index.html
+        run: |
+          echo "<!DOCTYPE html><html><body><ul>" > index.html
+          for f in *; do
+            if [ "$f" != "index.html" ] && [ "$f" != ".github" ]; then
+              echo "<li><a href=\"$f\">$f</a></li>" >> index.html
+            fi
+          done
+          echo "</ul></body></html>" >> index.html
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Update index.html"
+          git push
