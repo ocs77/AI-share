@@ -1,7 +1,0 @@
-"asset","aclass","subclass","wallet","quantity","price (USD)","value (USD)"
-"BTC","currency","crypto","spot",0.0077149100,"74,327.69",573.4314
-"EUR","currency","fiat","spot",0.0055,1.1637,0.0064
-"LINK","currency","crypto","spot",0.0000029000,9.122,0.0000
-"SOL","currency","crypto","spot",0.0000000060,82.31,0.0000
-"USDC","currency","stable_coin","spot",0.00005747,0.9996,0.0001
-"Total","","","","","",573.4379
